@@ -1,0 +1,71 @@
+/*WRAPPER*/
+#wrapper {
+  /* margin: 0 auto; */
+}
+
+#wrapper>div {
+  margin-bottom: 15px;
+}
+
+#wrapper>div:last-child{
+  margin-bottom: 0;
+}
+
+
+/*CHECKBOX*/
+#wrapper input {
+  display: none;
+}
+.checkbox-label div {
+  transition: border .3s ease-in-out;
+}
+.checkbox-label:focus div {
+  border: 1px solid var(--focus-color);
+}
+.checkbox-label {
+  transition: color .3s ease-in-out;
+}
+.checkbox-label:focus {
+  outline: none;
+  color: var(--focus-color);
+}
+.checkbox-label:hover {
+  color: var(--hover-color);
+}
+
+label {
+  cursor: pointer;
+  display: flex;
+  color: #FFFFFF;
+}
+
+label div {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #FFFFFF;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+label i {
+  font-size: 40px;
+  opacity: 0;
+}
+
+label:hover div {
+  border: 1px solid var(--hover-color);
+}
+
+input:checked+label i {
+  opacity: 1;
+}
+
+input:checked+label div {
+  background-image: url("../img/gallery/check_box-ellipse.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid #C283F3;
+}

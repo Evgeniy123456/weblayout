@@ -1,0 +1,229 @@
+.custom-select-wrapper {
+  position: relative;
+  margin: 0 auto;
+  user-select: none;
+  width: 100%;
+  height: auto;
+  background-color: inherit;
+}
+
+.custom-select {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.custom-select__trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #FFFFFF;
+  background: inherit;
+  cursor: pointer;
+  z-index: 1;
+  transition: color .3s ease-in-out;
+}
+.custom-select__trigger span {
+  padding-right: 12px;
+}
+
+.custom-select__trigger:focus {
+  outline: none;
+  background-color: var(--focus-color);
+}
+.custom-select__trigger:hover {
+  color: var(--hover-color);
+  background: transparent;
+}
+.custom-select__trigger:hover >.arrow::before,
+.custom-select__trigger:hover >.arrow::after {
+  background-color: var(--hover-color);
+}
+
+.custom-select__trigger:active {
+  color: var(--active-color);
+  background: transparent;
+}
+.custom-select__trigger:active >.arrow::before,
+.custom-select__trigger:active >.arrow::after {
+  background-color: var(--active-color);
+}
+
+.custom-options {
+  position: absolute;
+  display: block;
+  width: 300px;
+  height: 300px;
+  padding: 40px;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.custom-select.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  top: 192%;
+  z-index: 0;
+}
+
+.custom-option {
+  position: relative;
+  display: block;
+  padding: 9px 10px 12px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: outline .4s ease-in-out;
+}
+
+.custom-option:focus {
+  outline: 2px solid var(--focus-color);
+}
+
+.custom-option:hover {
+  outline: 2px solid var(--hover-color);
+}
+.custom-option:active {
+  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+}
+
+.custom-option:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.custom-option-real-img1 {
+  background-image: url("../img/header/realizm/realizm_tinto.jpg");
+}
+
+.custom-option-real-img2 {
+  background-image: url("../img/header/realizm/realizm_fridrix.jpg");
+}
+
+.custom-option-real-img3 {
+  background-image: url("../img/header/realizm/realizm_leonardo.jpg");
+}
+
+.custom-option-real-img4 {
+  background-image: url("../img/header/realizm/realizm_verok.jpg");
+}
+
+.custom-option-imp-img1 {
+  background-image: url("../img/header/impressionizm/impr_mone.jpg");
+}
+.custom-option-imp-img2 {
+  background-image: url("../img/header/impressionizm/impr_sislei.jpg");
+}
+.custom-option-imp-img3 {
+  background-image: url("../img/header/impressionizm/impr_mane.jpg");
+}
+.custom-option-imp-img4 {
+  background-image: url("../img/header/impressionizm/impr_renuar.jpg");
+}
+.custom-option-postimp-img1 {
+  background-image: url("../img/header/postimpressionizm/postimpr_1.jpg");
+}
+.custom-option-postimp-img2 {
+  background-image: url("../img/header/postimpressionizm/postimpr_2.jpg");
+}
+.custom-option-postimp-img3 {
+  background-image: url("../img/header/postimpressionizm/postimpr_3.jpg");
+}
+.custom-option-postimp-img4 {
+  background-image: url("../img/header/postimpressionizm/postimpr_4.jpg");
+}
+.custom-option-avang-img1 {
+  background-image: url("../img/header/avangard/avangard1.jpg");
+}
+.custom-option-avang-img2 {
+  background-image: url("../img/header/avangard/avangard2.jpg");
+}
+.custom-option-avang-img3 {
+  background-image: url("../img/header/avangard/avangard3.jpg");
+}
+.custom-option-avang-img4 {
+  background-image: url("../img/header/avangard/avangard4.jpg");
+}
+.custom-option-futur-img1 {
+  background-image: url("../img/header/futurizm/futur_1.jpg");
+}
+.custom-option-futur-img2 {
+  background-image: url("../img/header/futurizm/futur_2.jpg");
+}
+.custom-option-futur-img3 {
+  background-image: url("../img/header/futurizm/futur_3.jpg");
+}
+.custom-option-futur-img4 {
+  background-image: url("../img/header/futurizm/futur_4.jpg");
+}
+
+.custom-option:hover {
+  cursor: pointer;
+}
+
+.custom-option.selected {
+  /* display: none; */
+  /* color: #ffffff; */
+}
+
+.arrow {
+  position: relative;
+  height: 7px;
+  width: 7px;
+}
+
+/* .arrow:hover{
+  color: var(--hover-color);
+} */
+/* .arrow::before:hover{
+  color: red;
+} */
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.08rem;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.arrow::before {
+  left: -2px;
+  transform: rotate(-45deg);
+  background-color: #FFFFFF;
+}
+
+.arrow::after {
+  left: 2px;
+  transform: rotate(45deg);
+  background-color: #FFFFFF;
+}
+
+.open .arrow::before {
+  left: -2px;
+  transform: rotate(45deg);
+  background-color: #FFFFFF;
+}
+
+.open .arrow::after {
+  left: 2px;
+  transform: rotate(-45deg);
+  background-color: #FFFFFF;
+}
