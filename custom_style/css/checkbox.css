@@ -1,0 +1,56 @@
+/*WRAPPER*/
+#wrapper {
+  /* margin: 0 auto; */
+}
+
+#wrapper>div {
+  margin-bottom: 20px;
+}
+
+#wrapper>div:last-child{
+  margin-bottom: 0;
+}
+
+
+/*CHECKBOX*/
+#wrapper input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  display: flex;
+}
+
+label div {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border: 1px solid #999999;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  align-self: center;
+}
+
+label i {
+  font-size: 40px;
+  opacity: 0;
+}
+
+label:hover div {
+  border: 1px solid #CBB26E;
+}
+
+input:checked+label i {
+  opacity: 1;
+}
+
+input:checked+label div {
+  background-image: url("../img/checkbox/Rectangle\ 99.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid #CBB26E;
+}

@@ -1,0 +1,61 @@
+.flex_fd-cr {
+  flex-direction: column-reverse;
+}
+
+.tooltip_block {
+  position: relative;
+  display: flex;
+  padding: 20px 76px 20px 30px;
+  max-width: 375px;
+  height: auto;
+  background-color: #ffffff;
+}
+
+.tooltip_parag {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+
+.tooltip {
+  position: absolute;
+  top: 120px;
+  left: 260px;
+}
+
+.tool-svg {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.tool-svg:hover path,
+.tool-svg:focus path {
+  fill: #CCB26E;
+}
+
+.tool-svg:focus {
+  outline-offset: 1px;
+  outline-color: #CCB26E;
+}
+
+.tool-svg:hover + .tool_text,
+.tool-svg:focus + .tool_text {
+  opacity: 1;
+}
+
+.tool_text {
+  position: absolute;
+  padding: 8px 15px 15px 15px;
+  width: 165px;
+  top: -40px;
+  left: -73px;
+  opacity: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  background-image: url("../img/tooltip/Union.jpg");
+  background-repeat: no-repeat;
+  transition: opasity .3 ease-in-out;
+}
+

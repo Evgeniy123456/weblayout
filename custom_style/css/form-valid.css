@@ -1,0 +1,65 @@
+.form_container {
+  display: flex;
+  padding: 40px 30px 40px 30px;
+  width: 440px;
+  height: 400px;
+  background: #000000;
+  opacity: 0.7;
+  border-radius: 10px;
+
+
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-def {
+  padding-left: 20px;
+  width: 380px;
+  height: 60px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #FF5C00;
+}
+
+.js-validate-error-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FF5C00 !important;
+
+}
+
+.js-validate-error-field {
+  border: 2px solid #FF5C00 !important;
+  color: #FF5C00 !important;
+}
+
+.form-def>input> {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.form_name {
+}
+.form_tel {
+}
+.form_mail {
+}
+
+.form_button {
+  padding: 17px 53px;
+  width: 192px;
+  height: 60px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  background: #FF5C00;
+  border-radius: 10px;
+}
