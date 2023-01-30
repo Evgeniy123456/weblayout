@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список студентов</title>
+  <link rel="icon" type="image/x-icon" href="/src/img/favicon.png">
+  <link rel="stylesheet" href="/src/css/normalize.css">
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/media.css">
+  <script defer src="/src/js/main.js"></script>
+</head>
+
+<body>
+  <main class="main">
+    <div class="container" id="container">
+      <div class="header d-flex align-items-center" id="header">
+        <h1 class="header__top p-4 mb-2">Учёт студентов</h1>
+      </div>
+
+      <div class="header__two">
+        <h2 class="d-flex align-items-center p-4">
+          Добавить нового студента
+        </h2>
+        <form action="#" class="student__add-form d-flex align-items-center justify-content-between p-3 flex-wrap" id="addForm">
+          <label class="d-flex flex-column">Фамилия cтудента
+            <input type="text" required name="Фамилия" placeholder="Введите фамилию" autocomplete="on" id="addSurName">
+          </label>
+          <label class="d-flex flex-column">Имя cтудента
+            <input type="text" name="Имя" required placeholder="Введите имя" autocomplete="on" id="addName">
+          </label>
+          <label class="d-flex flex-column">Отчество cтудента
+            <input type="text" name="Отчество" required placeholder="Введите отчество" autocomplete="on" id="addMidlName">
+          </label>
+          <label class="d-flex flex-column">Название факудьтета
+            <select class="form-select" required type="number" name="Факультет" autocomplete="on" id="addFacultet">
+              <option value="">Выберите факультет</option>
+              <option value="Бизнеса и права">Бизнеса и права</option>
+              <option value="Бухгалтерского учета">Бухгалтерского учета</option>
+              <option value="Экономичесский">Экономичесский</option>
+              <option value="Землеустраительный">Землеустраительный</option>
+              <option value="Агротехнологичесский">Агротехнологичесский</option>
+            </select>
+          </label>
+          <label class="d-flex flex-column">Дата рождения
+            <input type="date" required name="Дата рождения" min="1990-01-01" max="2020-01-01" id="addDateOfBirth">
+          </label>
+          <label class="d-flex flex-column">Год поступления
+            <select class="form-select" type="date" required name="Год поступления" id="addYear">
+              <option value="">Выберите год</option>
+              <option value="2000">2000</option>
+              <option value="2001">2001</option>
+              <option value="2002">2002</option>
+              <option value="2003">2003</option>
+              <option value="2004">2004</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+          </label>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Добавить в таблицу</button>
+          </div>
+        </form>
+      </div>
+
+      <h2 class="header__three d-flex align-items-center p-4">
+        Фильтрация списка
+      </h2>
+      <form action="#" class="input-group align-items-center justify-content-between" id="filterForm">
+        <div class="form-block d-flex flex-column mb-3">
+          <label class="form-label">Поиск по ФИО</label>
+          <input type="text" class="form-control" id="filterFio">
+        </div>
+        <div class="form-block d-flex flex-column mb-3">
+          <label class="form-label">Поиск по факультету</label>
+          <input type="text" class="form-control" id="filterFacultet">
+        </div>
+        <div class="form-block d-flex flex-column mb-3">
+          <label class="form-label">Поиск по году рождения</label>
+          <input type="text" class="form-control" id="filterDateOfBirth">
+        </div>
+        <div class="form-block d-flex flex-column mb-3">
+          <label class="form-label">Поиск по году поступления</label>
+          <input type="text" class="form-control" id="filterDateRecept">
+        </div>
+      </form>
+      <button class="btn btn-primary btn-form" type="submit" id="filterFormBtn">Очистить форму</button>
+
+      <h2 class="header__three d-flex align-items-center p-4">
+        Список студентов
+      </h2>
+      <nav class="student__table d-flex justify-content-between align-content-center">
+        <div class="student__header" id="navFio">
+          Ф.И.О.
+        </div>
+        <div class="student__header" id="navFacultet">
+          Факультет
+        </div>
+        <div class="student__header" id="navDateOfBirth">
+          Дата рождения (возраст)
+        </div>
+        <div class="student__header" id="navYearRecept">
+          Годы обучения (курс)
+        </div>
+      </nav>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

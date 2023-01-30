@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра в пары</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon-game.svg">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./src/css/hover-min.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <section class="game">
+    <div class="container">
+      <div  class="game__window">
+        <div class="container-h1 animate__animated animate__backInDown">
+            <svg viewBox="0 0 960 300">
+              <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">Super game</text>
+              </symbol>
+              <g class = "g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+              </g>
+            </svg>
+        </div>
+        <div class="game__block game flex animate__animated animate__backInUp" id="game"></div>
+        <button class="game__button btn-reset flex animate__animated animate__bounceIn" id="gameButton" type="button" tabindex="0">
+          Начать новую игру
+        </button>
+      </div>
+    </div>
+  </section>
+  <footer class="game__footer flex">P.S. супер игра из будущего</footer>
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

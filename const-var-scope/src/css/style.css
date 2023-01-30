@@ -1,0 +1,381 @@
+html {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  font-family: "OpenSans", sans-serif;
+  font-style: normal;
+  background-color: rgb(28, 3, 3);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans-Italic"),
+    url("/font/OpenSans-Italic.woff2") format("woff2"),
+    url("/font/OpenSans-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans-Regular"),
+    url("/font/OpenSans-Regular.woff2") format("woff2"),
+    url("/font/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans-SemiBold"),
+    url("/font/OpenSans-SemiBold.woff2") format("woff2"),
+    url("/font/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans-Bold"),
+    url("/font/OpenSans-Bold.woff2") format("woff2"),
+    url("/font/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* glob */
+.flex {
+  display: flex;
+}
+
+.jf-sb {
+  justify-content: space-between;
+}
+
+.al-i-c {
+  align-items: center;
+}
+
+.fl-dr-col {
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+.game {
+  width: 100%;
+  height: 100%;
+
+}
+.container {
+  margin: 0 auto;
+  max-width: 668px;
+}
+.game__window {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game__block {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.game__card {
+  margin-bottom: 30px;
+  padding: 0;
+  width: 18%;
+  height: 80px;
+  color: transparent;
+  background-image: url('/img/bgi-card.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: grayscale(200);
+  opacity: .8;
+  transition: filter .3s ease-in-out,
+              opacity .3s ease-in-out,
+              background .3s ease-in-out,
+              color .3s ease-in-out,
+              outline .3s ease-in-out;
+}
+
+.game__card:focus-visible{
+  outline: 4px solid black;
+  outline-offset: 3px;
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.game__card:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.game__card:active {
+  outline: 4px solid rgb(62, 101, 243);
+  outline-offset: 3px;
+}
+
+.game__card.open{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(161, 148, 148);
+  color: red;
+  font-size: 42px;
+  font-weight: bold;
+  border: 3px solid red;
+  z-index: 1;
+  opacity: 1;
+}
+
+.game__card.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  font-weight: bold;
+  background: rgb(52, 120, 6);
+  color: red;
+  border: 3px solid red;
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.game__button {
+  display: none;
+  margin: 0 auto;
+  padding: 8px 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  color: black;
+  background-color: rgb(52, 120, 6);
+  border: 2px solid rgb(52, 120, 6);
+  border-radius: 20px;
+  outline: 3px solid rgb(52, 120, 6);
+  outline-offset: 5px;
+  cursor: pointer;
+  filter: grayscale(100);
+  transition: opacity .3s ease-in-out, outline .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.game__button:focus-visible {
+  filter: grayscale(0);
+  opacity: .8;
+  outline: 5px solid rgb(52, 120, 6);
+}
+
+.game__button:hover {
+  filter: grayscale(0);
+  opacity: .8;
+  outline: 5px solid rgb(52, 120, 6);
+}
+
+.game__button:active {
+  opacity: 1;
+  background-color: rgb(27, 88, 5);
+  outline: 5px solid rgb(27, 88, 5);
+}
+
+/*footer*/
+.game__footer {
+  padding:  0  30px 5px 30px;
+  margin-top: auto;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: antiquewhite;
+}
+
+
+/*h1*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.container-h1 {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+svg {
+  display: block;
+  font: 10.5em 'Montserrat';
+  max-width: 960px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+
+@media (max-width: 1440px) {
+  .container {
+    max-width: 596px;
+  }
+  .container-h1 {
+    margin-bottom: 5px;
+  }
+  svg {
+    height: 150px;
+  }
+  .game__block {
+    margin-bottom: 10px;
+  }
+
+  .game__card {
+    height: 120px;
+  }
+  .game__card.open {
+    font-size: 42px;
+  }
+
+  .game__card.success {
+    font-size: 42px;
+  }
+
+  .game__button {
+    padding: 6px 18px;
+    font-size: 22px;
+
+  }
+}
+
+@media (max-width: 1024px) {
+  .game__block {
+    margin-bottom: 15px;
+  }
+  .game__card {
+    height: 100px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
+
+  .container-h1 {
+    margin-bottom: 0;
+  }
+
+  svg {
+    height: 100px;
+  }
+
+  .game__card {
+    height: 80px;
+  }
+
+  .game__button {
+    padding: 5px 15px;
+    font-size: 14px ;
+    line-height: 18px;
+    border: 1px solid rgb(52, 120, 6);
+    outline: 2px solid rgb(52, 120, 6);
+    outline-offset: 3px;
+  }
+
+  .game__footer {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game__card.open {
+    font-size: 36px;
+  }
+
+  .game__card.success {
+    font-size: 36px;
+  }
+}
